@@ -1,57 +1,80 @@
-//arthlete page 1
+//New Onboarding 1
 
 
+import React from 'react';
+import { View, Text, ImageBackground, StyleSheet, TouchableOpacity } from 'react-native';
 
-import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
-
-const ArthleteLogo = () => {
+const WorkoutScreen = () => {
   return (
-    <View style={styles.container}>
-      {/* Main logo container */}
-      <View style={styles.logoContainer}>
-        {/* Logo Image */}
-        <Image
-          source={{ uri :"https://i.postimg.cc/sxMGJhq8/ARTHLETE-2-removebg-preview-1.png"   }}
-          style={styles.logoImage}
-        />
-
-        {/* "ARTHLETE" Text */}
-        <Text style={styles.logoText}>
-          {/* <Text style={styles.textAR}>AR</Text>
-          <Text style={styles.textTHLETE}>THLETE</Text> */}
-        </Text>
-      </View>
-    </View>
+    <TouchableOpacity style={{ flex: 1 }} onPress={() => {}} activeOpacity={0.9}>
+      <ImageBackground
+        source={{ uri: 'https://i.ibb.co/v4nFht8h/workout-image.png' }}
+        style={styles.background}
+      >
+        <View style={styles.overlay}>
+          <View style={styles.textContainer}>
+            <Text style={styles.title}> <Text>A </Text>
+              <Text style={styles.highlight}>WORKOUT </Text>
+            </Text>
+            <Text style={styles.subtitle}>FOR EVERY                                     GOAL...</Text>
+          </View>
+        </View>
+      </ImageBackground>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
-    backgroundColor: "#000000",
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  logoContainer: {
-    alignItems: "center",
+  overlay: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
   },
-  logoImage: {
-    width: 400,
-    height: 400,
-    resizeMode: "contain",
+  textContainer: {
+    backgroundColor: '#EEAB7C',
+    paddingVertical: 10,
+    paddingHorizontal: 40,
+    borderRadius: 26,
+    alignItems: 'center',
+    width: 429, // Adjust width to fit better
+    height:175,
+    borderBottomRightRadius: 40, // Adjust corner radius
   },
-  logoText: {
-    marginTop: 10,
-    fontSize: 20,
-    fontWeight: "bold",
+  title: {
+    fontSize: 40, // Slightly reduced for better fit
+    fontFamily: 'Bungee-Regular',
+    textTransform: 'uppercase',
+    textAlign: 'center',
+    lineHeight: 30,
+    color:'white',
+   marginTop:3,
   },
-  textAR: {
-    color: "#FFFFFF",
+  highlight: {
+    color: '#B24A02',
+    textShadowColor: 'white', // White border
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 2,
+    //marginTop:3,
   },
-  textTHLETE: {
-    color: "#00FFFF",
+  subtitle: {
+    fontSize: 40,
+    fontFamily: 'Bungee-Regular',
+    textAlign: 'center',
+    color: 'white',
+    
+    //marginTop: 5,
+    
+  },
+  whiteText: {
+    color: 'white',
   },
 });
 
-export default ArthleteLogo;
+export default WorkoutScreen;
